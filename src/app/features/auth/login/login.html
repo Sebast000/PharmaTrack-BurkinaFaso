@@ -1,0 +1,13 @@
+<div class="login-container">
+  <h2>Connexion à PharmaTrack-Burkina</h2>
+  <form (ngSubmit)="onLogin()">
+    <label>Nom d'utilisateur</label>
+    <input [(ngModel)]="username" name="username" required>
+    
+    <label>Mot de passe</label>
+    <input [(ngModel)]="password" name="password" type="password" required>
+
+    <button type="submit">Se connecter</button>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
+</div>
