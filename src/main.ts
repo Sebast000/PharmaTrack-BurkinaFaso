@@ -1,3 +1,8 @@
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
+
+
+
 import 'zone.js';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';

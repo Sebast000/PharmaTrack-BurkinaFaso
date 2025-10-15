@@ -1,11 +1,99 @@
-.dashboard {
-  padding: 20px;
+/* ----------- Global ----------- */
+.dashboard-title,
+.chart-title {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007bff;
+  font-weight: 700;
 }
-button {
-  margin-top: 20px;
-  background-color: #dc3545;
-  border: none;
-  padding: 8px 16px;
-  color: white;
-  border-radius: 8px;
+
+.dashboard-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+/* ----------- Indicator cards ----------- */
+.indicator {
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.indicator:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Specific themes --- */
+.indicator.danger {
+  border-top: 5px solid #e74c3c;
+}
+
+.indicator.success {
+  border-top: 5px solid #28a745;
+}
+
+.indicator.info {
+  border-top: 5px solid #007bff;
+}
+
+/* --- Texts --- */
+.indicator h3 {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.big-text {
+  font-size: 1.5em;
+  color: #222;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  text-align: left;
+}
+
+li {
+  background: #f8f9fa;
+  padding: 6px 10px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  font-size: 0.95em;
+}
+
+li span {
+  color: #666;
+}
+
+.empty {
+  color: #28a745;
+  font-weight: 600;
+}
+
+/* ----------- Chart ----------- */
+.chart-container {
+  width: 80%;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+canvas {
+  max-width: 100%;
 }

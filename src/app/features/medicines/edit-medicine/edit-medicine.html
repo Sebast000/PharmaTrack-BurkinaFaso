@@ -1,10 +1,10 @@
 <div class="form-container">
-  <h2>💊 Ajouter un Médicament</h2>
+  <h2>Modifier le Médicament</h2>
 
   <form [formGroup]="medicineForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Nom du médicament</label>
-      <input formControlName="name" type="text" placeholder="Ex: Paracétamol" />
+      <input formControlName="name" type="text" placeholder="Paracétamol" />
       <small *ngIf="medicineForm.get('name')?.invalid && medicineForm.get('name')?.touched">
         Le nom est obligatoire.
       </small>
@@ -12,12 +12,12 @@
 
     <div class="form-group">
       <label>Catégorie</label>
-      <input formControlName="category" type="text" placeholder="Ex: Antidouleur" />
+      <input formControlName="category" type="text" placeholder="Antidouleur" />
     </div>
 
     <div class="form-group">
       <label>Prix (FCFA)</label>
-      <input formControlName="price" type="number" min="0" placeholder="Ex: 500" />
+      <input formControlName="price" type="number" />
       <small *ngIf="medicineForm.get('price')?.invalid && medicineForm.get('price')?.touched">
         Le prix doit être supérieur à 0.
       </small>
@@ -25,7 +25,7 @@
 
     <div class="form-group">
       <label>Quantité en stock</label>
-      <input formControlName="stock" type="number" min="0" placeholder="Ex: 20" />
+      <input formControlName="stock" type="number" />
     </div>
 
     <div class="form-group">
@@ -33,9 +33,7 @@
       <input formControlName="expiryDate" type="date" />
     </div>
 
-    <button type="submit" [disabled]="medicineForm.invalid">
-      💾 Enregistrer
-    </button>
+    <button type="submit" [disabled]="medicineForm.invalid">💾 Modifier</button>
   </form>
 
   <p class="success" *ngIf="successMessage">{{ successMessage }}</p>

@@ -2,9 +2,20 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './features/auth/login/login.component';
 import { DashboardComponent } from './features/dashboard/dashboard/dashboard.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { ListMedicinesComponent } from './features/medicines/list-medicines/list-medicines';
+import {AddMedicineComponent } from './features/medicines/add-medicine/add-medicine';
+import { ListSalesComponent } from './features/sales/list-sales/list-sales';
+import { EditMedicineComponent } from './features/medicines/edit-medicine/edit-medicine';
 
-export const appRoutes: Routes = [
+export const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'medicines', component: ListMedicinesComponent, canActivate: [AuthGuard] },
+  { path: 'add-medicine', component: AddMedicineComponent, canActivate: [AuthGuard] },
+  { path: 'sales', component: ListSalesComponent },
+  { path: 'medicines/edit/:id', component: EditMedicineComponent },
+
+
+
   { path: '**', redirectTo: '' }
 ];

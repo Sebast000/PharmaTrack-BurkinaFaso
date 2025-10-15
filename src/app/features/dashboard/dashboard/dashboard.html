@@ -1,5 +1,31 @@
-<div class="dashboard">
-  <h2>Bienvenue sur le tableau de bord PharmaTrack-Burkina</h2>
-  <p>Accédez à la gestion des médicaments et aux ventes.</p>
-  <button (click)="logout()">Se déconnecter</button>
+<h2 class="dashboard-title">📊 Tableau de bord</h2>
+
+<div class="dashboard-indicators">
+  <div class="indicator danger">
+    <h3>Médicaments en rupture</h3>
+    <ul>
+      <li *ngFor="let med of lowStockMedicines">
+        ⚠️ {{ med.name }} <span>({{ med.stock }} en stock)</span>
+      </li>
+    </ul>
+    <p *ngIf="lowStockMedicines.length === 0" class="empty">
+      ✅ Aucun médicament en rupture
+    </p>
+  </div>
+
+  <div class="indicator success">
+    <h3>Chiffre d’affaires du jour</h3>
+    <p class="big-text">{{ totalSalesToday | number:'1.0-0' }} FCFA</p>
+  </div>
+
+  <div class="indicator info">
+    <h3>Nombre de ventes du jour</h3>
+    <p class="big-text">{{ totalSalesCount }}</p>
+  </div>
+</div>
+
+<h2 class="chart-title">📈 Graphique des ventes de la semaine</h2>
+
+<div class="chart-container">
+  <canvas baseChart [data]="chartData" [options]="chartOptions" type="bar"></canvas>
 </div>

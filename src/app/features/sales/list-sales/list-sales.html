@@ -1,1 +1,56 @@
-<p>list-sales works!</p>
+<div class="sales-container">
+  <h2>Enregistrer une vente</h2>
+
+  <form [formGroup]="saleForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Médicament :</label>
+      <select formControlName="medicineId">
+        <option value="">-- Sélectionner --</option>
+        <option *ngFor="let m of medicines" [value]="m.id">
+          {{ m.name }} (Stock: {{ m.stock }})
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label>Quantité :</label>
+      <input type="number" formControlName="quantity" />
+    </div>
+
+    <div>
+      <label>Date :</label>
+      <input type="date" formControlName="date" />
+    </div>
+
+    <button type="submit">💾 Enregistrer</button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <hr />
+
+  <h3>Ventes du jour</h3>
+  <p><strong>Total du jour :</strong> {{ totalDay | number:'1.0-0' }} FCFA</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Médicament</th>
+        <th>Quantité</th>
+        <th>Prix Unitaire</th>
+        <th>Total (FCFA)</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sales">
+        <td>{{ s.medicineName }}</td>
+        <td>{{ s.quantity }}</td>
+        <td>{{ s.price | number:'1.0-0' }} FCFA</td>
+        <td>{{ s.total | number:'1.0-0' }} FCFA</td>
+        <td>{{ s.date | date:'dd/MM/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,43 @@
-<p>list-medicines works!</p>
+<h2 class="page-title">💊 Liste des Médicaments</h2>
+
+<div class="search-container">
+  <input
+    type="text"
+    class="search-input"
+    placeholder="🔍 Rechercher un médicament..."
+    [(ngModel)]="searchTerm"
+    (input)="filterMedicines()"
+  />
+</div>
+
+<div class="table-wrapper">
+  <table class="medicines-table">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Catégorie</th>
+        <th>Prix</th>
+        <th>Quantité</th>
+        <th>Date d’expiration</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let med of filteredMedicines" [ngClass]="{ 'low-stock': med.stock < 10 }">
+        <td>{{ med.name }}</td>
+        <td>{{ med.category }}</td>
+        <td>{{ med.price | number:'1.0-0' }} FCFA</td>
+        <td>{{ med.stock }}</td>
+        <td>{{ med.expiryDate | date:'dd/MM/yyyy' }}</td>
+        <td>
+          <button class="btn btn-edit" (click)="editMedicine(med)">✏️ Modifier</button>
+          <button class="btn btn-delete" (click)="deleteMedicine(med.id!)">🗑️ Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p *ngIf="hasLowStock()" class="alert-stock">
+  ⚠️ Certains médicaments sont en rupture imminente !
+</p>

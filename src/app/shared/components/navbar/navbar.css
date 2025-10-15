@@ -1,14 +1,29 @@
 .navbar {
-  background: #007bff;
+  background: linear-gradient(90deg, #007bff, #0056b3);
   color: white;
-  padding: 12px;
+  padding: 12px 24px;
   display: flex;
   gap: 20px;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
 }
-a {
+
+.navbar a {
   color: white;
   text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
-a:hover {
-  text-decoration: underline;
+
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.navbar a:active {
+  transform: translateY(1px);
 }

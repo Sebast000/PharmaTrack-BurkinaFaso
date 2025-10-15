@@ -1,10 +1,234 @@
 {
   "medicines": [
-    { "id": 1, "name": "Paracétamol", "category": "Douleur", "price": 500, "stock": 25, "expiryDate": "2025-12-01" }
+    {
+      "name": "Spasfon",
+      "category": "Antispamodique",
+      "price": 2000,
+      "stock": 197,
+      "expiryDate": "2028-08-02",
+      "id": "f0dd"
+    },
+    {
+      "id": "df41",
+      "name": "Paracétamol",
+      "category": "Antidouleur",
+      "price": 150,
+      "stock": 199,
+      "expiryDate": "2026-01-02"
+    },
+    {
+      "id": "430a",
+      "name": "Doliprane",
+      "category": "Antalgique",
+      "price": 500,
+      "stock": 199,
+      "expiryDate": "2027-02-20"
+    },
+    {
+      "name": "Maalox",
+      "category": "Antiacide",
+      "price": 650,
+      "stock": 199,
+      "expiryDate": "2027-12-02",
+      "id": "b7f9"
+    },
+    {
+      "id": "e80b",
+      "name": "Oméprazole",
+      "category": "Inhibiteur",
+      "price": 600,
+      "stock": 198,
+      "expiryDate": "2027-12-20"
+    },
+    {
+      "id": "8a36",
+      "name": "Fervex",
+      "category": "Traitement des symptômes du rhume",
+      "price": 500,
+      "stock": 199,
+      "expiryDate": "2028-01-01"
+    },
+    {
+      "name": "Amoxicilline",
+      "category": "Antibiotique",
+      "price": 700,
+      "stock": 200,
+      "expiryDate": "2027-01-21",
+      "id": "aa30"
+    },
+    {
+      "id": "f1e4",
+      "name": "Aspégic",
+      "category": "Anti-inflammatoire",
+      "price": 750,
+      "stock": 200,
+      "expiryDate": "2028-12-12"
+    }
   ],
-  "sales": [],
+  "sales": [
+    {
+      "id": "3d4e",
+      "medicine": "Amoxicilline ",
+      "quantity": 1,
+      "total": 500,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "3e20",
+      "medicine": "Paracétamol",
+      "quantity": 1,
+      "total": 150,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "efa9",
+      "medicine": "Paracétamol",
+      "quantity": 2,
+      "total": 300,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "50b6",
+      "medicine": "Paracétamol",
+      "quantity": 2,
+      "total": 300,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "2a5d",
+      "medicine": "Amoxicilline ",
+      "quantity": 1,
+      "total": 500,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "64a9",
+      "medicine": "Paracétamol",
+      "quantity": 1,
+      "total": 150,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "7f17",
+      "medicine": "Amoxicilline ",
+      "quantity": 1,
+      "total": 500,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "06b6",
+      "medicine": "Amoxicilline ",
+      "quantity": 2,
+      "total": 1000,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "3dfc",
+      "medicine": "Paracétamol",
+      "quantity": 1,
+      "total": 150,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "5d52",
+      "medicine": "Ibuproféne",
+      "quantity": 1,
+      "total": 250,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "bfbb",
+      "medicine": "Ibuproféne",
+      "quantity": 2,
+      "total": 500,
+      "date": "2025-10-14"
+    },
+    {
+      "id": "8d41",
+      "medicineId": "f0dd",
+      "date": "2025-10-14",
+      "quantity": 1,
+      "total": 2000
+    },
+    {
+      "id": "e2a2",
+      "medicineId": "f0dd",
+      "date": "2025-10-15",
+      "quantity": 1,
+      "total": 2000
+    },
+    {
+      "id": "8437",
+      "medicineId": null,
+      "date": "2025-10-15",
+      "quantity": 2,
+      "total": 300
+    },
+    {
+      "id": "8a17",
+      "medicineId": "df41",
+      "date": "2025-10-15",
+      "quantity": 1,
+      "total": 150
+    },
+    {
+      "id": "edb2",
+      "medicineId": "8a36",
+      "date": "2025-10-15",
+      "quantity": 1,
+      "total": 500
+    },
+    {
+      "id": "75c6",
+      "medicineId": "430a",
+      "date": "2025-10-15",
+      "quantity": 1,
+      "total": 500
+    },
+    {
+      "id": "61ad",
+      "medicineId": "e80b",
+      "date": "2025-10-15",
+      "quantity": 1,
+      "total": 600
+    },
+    {
+      "id": "9325",
+      "medicineId": "b7f9",
+      "medicineName": "Maalox",
+      "quantity": 1,
+      "total": 650,
+      "date": "2025-10-15"
+    },
+    {
+      "id": "06ff",
+      "medicineId": "e80b",
+      "medicineName": "Oméprazole",
+      "quantity": 1,
+      "total": 600,
+      "date": "2025-10-15"
+    },
+    {
+      "id": "cca8",
+      "medicineId": "f0dd",
+      "medicineName": "Spasfon",
+      "quantity": 1,
+      "total": 2000,
+      "date": "2025-10-15"
+    }
+  ],
   "users": [
-    { "id": 1, "username": "admin", "password": "admin", "role": "admin" },
-    { "id": 2, "username": "user", "password": "user", "role": "user" }
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "user",
+      "role": "user"
+    }
   ]
 }
