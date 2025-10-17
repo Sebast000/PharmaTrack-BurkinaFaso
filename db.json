@@ -44,7 +44,7 @@
       "name": "Fervex",
       "category": "Traitement des symptômes du rhume",
       "price": 500,
-      "stock": 197,
+      "stock": 196,
       "expiryDate": "2028-01-01",
       "id": "8a36"
     },
@@ -135,6 +135,14 @@
       "price": 600,
       "stock": 10,
       "expiryDate": "2026-05-05"
+    },
+    {
+      "id": "9675",
+      "name": "Spray ",
+      "category": "Antidouleur",
+      "price": 600,
+      "stock": 30,
+      "expiryDate": "2026-02-01"
     }
   ],
   "sales": [
@@ -446,6 +454,14 @@
       "medicineName": "Combimal",
       "quantity": 1,
       "total": 2500,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "c1a0",
+      "medicineId": "8a36",
+      "medicineName": "Fervex",
+      "quantity": 1,
+      "total": 500,
       "date": "2025-10-17"
     }
   ],
