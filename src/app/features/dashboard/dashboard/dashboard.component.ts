@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, CurrencyPipe, NgIf, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartOptions } from 'chart.js';
 import { MedicinesService, Medicine } from '../../../core/services/medicines';
@@ -21,7 +21,7 @@ export class DashboardComponent implements OnInit {
   // ✅ Données du graphique
   chartData: ChartConfiguration<'bar'>['data'] = {
     labels: ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'],
-    datasets: [{ data: [], label: 'Ventes XOF' }]
+    datasets: [{ data: [], label: 'Ventes XOF', backgroundColor: '#007bff', borderRadius: 8 }]
   };
 
   chartOptions: ChartOptions<'bar'> = {
@@ -29,6 +29,11 @@ export class DashboardComponent implements OnInit {
     plugins: {
       legend: { display: true, position: 'top' },
       title: { display: true, text: 'Ventes hebdomadaires' }
+    },
+    scales: {
+      y: {
+        beginAtZero: true
+      }
     }
   };
 
@@ -42,48 +47,61 @@ export class DashboardComponent implements OnInit {
     this.loadSales();
   }
 
+  // 💊 Chargement des médicaments
   loadMedicines(): void {
     this.medicineService.getAll().subscribe((data: Medicine[]) => {
-      // 🟢 CORRECTION : Convertir le stock en nombre au chargement des données
-      const formattedData: Medicine[] = data.map(m => ({
+      const formattedData = data.map(m => ({
         ...m,
-        stock: Number(m.stock) 
+        stock: Number(m.stock)
       }));
 
       this.medicines = formattedData;
-      // 🟢 Application du filtre sur les données avec le stock numérique
       this.lowStockMedicines = this.medicines.filter(m => m.stock < 10);
     });
   }
 
+  // 💰 Chargement des ventes
   loadSales(): void {
-    this.salesService.getAll().subscribe((sales: Sale[]) => {
-      // 🟢 Amélioration : Utiliser toISOString().split('T')[0] pour comparer la date
-      const today = new Date().toISOString().split('T')[0];
-      const todaySales = sales.filter(s => s.date.startsWith(today));
+    this.salesService.getAll().subscribe({
+      next: (sales: Sale[]) => {
+        if (!sales || sales.length === 0) {
+          this.chartData.datasets[0].data = [0, 0, 0, 0, 0, 0, 0];
+          return;
+        }
 
-      this.totalSalesToday = todaySales.reduce((sum, s) => sum + s.total, 0);
-      this.totalSalesCount = todaySales.length;
+        const today = new Date().toISOString().split('T')[0];
+        const todaySales = sales.filter(s => s.date.startsWith(today));
 
-      this.updateChartData(sales);
+        this.totalSalesToday = todaySales.reduce((sum, s) => sum + s.total, 0);
+        this.totalSalesCount = todaySales.length;
+
+        this.updateChartData(sales);
+      },
+      error: err => {
+        console.error('Erreur lors du chargement des ventes :', err);
+      }
     });
   }
 
+  // 📊 Mise à jour du graphique
   updateChartData(sales: Sale[]): void {
-    const weekData = [0, 0, 0, 0, 0, 0, 0]; // Lundi → Dimanche
+    const weekData = Array(7).fill(0); 
 
     sales.forEach(s => {
-      // ⚠️ Problème de format de date : si s.date est 'YYYY-MM-DD', new Date() peut échouer
-      // Si votre date de vente vient de new Date().toISOString().split('T')[0], 
-      // il faut la reconvertir en Date pour getDay() :
-      const d = new Date(s.date);
-      
-      // La ligne ci-dessous peut donner des résultats incohérents si la date est mal formatée
-      const dayIndex = d.getDay() === 0 ? 6 : d.getDay() - 1; // dimanche à la fin
+      try {
+        const date = new Date(s.date);
+        if (isNaN(date.getTime())) return; 
 
-      weekData[dayIndex] += s.total;
+        const dayIndex = date.getDay() === 0 ? 6 : date.getDay() - 1;
+        weekData[dayIndex] += s.total;
+      } catch {
+        console.warn('Date invalide ignorée:', s.date);
+      }
     });
 
-    this.chartData.datasets[0].data = weekData; // mise à jour
+    this.chartData = {
+      ...this.chartData,
+      datasets: [{ ...this.chartData.datasets[0], data: weekData }]
+    };
   }
 }

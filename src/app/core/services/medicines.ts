@@ -7,9 +7,9 @@ export interface Medicine {
   name: string;
   category: string;
   price: number;
-  stock: number; // ✅ correspond à ton JSON
+  stock: number; 
 
-  stockRemaining?: number; // Pour le stock réel après ventes
+  stockRemaining?: number; 
   expiryDate: string; 
 }
 
@@ -17,7 +17,7 @@ export interface Medicine {
   providedIn: 'root'
 })
 export class MedicinesService {
-  private apiUrl = 'http://localhost:3000/medicines'; // URL du JSON Server
+  private apiUrl = 'http://localhost:3000/medicines'; 
 
   constructor(private http: HttpClient) {}
 

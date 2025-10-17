@@ -20,8 +20,15 @@ export class LoginComponent {
 
   onLogin() {
     const success = this.auth.login(this.username, this.password);
+
     if (success) {
-      this.router.navigate(['/dashboard']);
+      const role = this.auth.getRole();
+
+      if (role === 'admin') {
+        this.router.navigate(['/dashboard']);
+      } else if (role === 'user') {
+        this.router.navigate(['/sales']);
+      }
     } else {
       this.errorMessage = 'Identifiants invalides.';
     }

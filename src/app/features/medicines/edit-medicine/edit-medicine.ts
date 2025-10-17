@@ -15,7 +15,7 @@ export class EditMedicineComponent implements OnInit {
   medicineForm: FormGroup;
   successMessage = '';
   errorMessage = '';
-  medicineId!: string; // ✅ Doit être une string si ton ID est "f0dd"
+  medicineId!: string; 
 
   constructor(
     private fb: FormBuilder,
@@ -33,10 +33,10 @@ export class EditMedicineComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // ✅ Récupération et stockage de l’ID
+ 
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.medicineId = id; // ⚠️ C’est ce qu’il manquait
+      this.medicineId = id; 
       this.medicineService.getById(id).subscribe({
         next: (med) => this.medicineForm.patchValue(med),
         error: () => this.errorMessage = '❌ Impossible de charger les données du médicament.'

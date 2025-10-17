@@ -1,6 +1,9 @@
-<nav class="navbar">
+<nav class="navbar" *ngIf="auth.isAuthenticated()">
   <a routerLink="/dashboard">Tableau de bord</a>
-  <a routerLink="/medicines">Médicaments</a>
-  <a routerLink="/add-medicine">Ajouter Médicament</a>
   <a routerLink="/sales">Ventes</a>
+
+  <a *ngIf="auth.getRole() === 'admin'" routerLink="/medicines">Médicaments</a>
+  <a *ngIf="auth.getRole() === 'admin'" routerLink="/add-medicine">Ajouter Médicament</a>
+
+  <button (click)="logout()">Déconnexion</button>
 </nav>

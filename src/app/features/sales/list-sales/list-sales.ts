@@ -13,7 +13,7 @@ import { switchMap } from 'rxjs/operators';
   styleUrls: ['./list-sales.css']
 })
 export class ListSalesComponent implements OnInit {
-  sales: any[] = []; // ✅ on met `any[]` pour ajouter le nom du médicament
+  sales: any[] = []; 
   medicines: Medicine[] = [];
   saleForm!: FormGroup;
   totalDay = 0;
@@ -43,9 +43,9 @@ export class ListSalesComponent implements OnInit {
         stock: Number(m.stock)
       }));
 
-      // ✅ Une fois les médicaments récupérés, on charge les ventes
+      
       this.salesService.getAll().subscribe((sales: Sale[]) => {
-        // 🧠 Associer chaque vente à son médicament
+        
         this.sales = sales.map(sale => {
           const med = this.medicines.find(m => m.id === sale.medicineId);
           return {
@@ -80,7 +80,7 @@ export class ListSalesComponent implements OnInit {
       const newStock = currentStock - quantityToSell;
       const total = selectedMed.price * quantityToSell;
 
-      // ✅ On enregistre aussi le nom du médicament pour l’affichage direct
+     
       const sale: any = {
         medicineId: selectedMed.id,
         medicineName: selectedMed.name,

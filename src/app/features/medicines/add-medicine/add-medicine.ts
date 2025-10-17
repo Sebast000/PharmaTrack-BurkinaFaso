@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MedicinesService } from '../../../core/services/medicines';
-import { CommonModule, NgIf } from '@angular/common'; // ✅ ajoute NgIf ici
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-add-medicine',
   standalone: true,
-  imports: [CommonModule, NgIf, ReactiveFormsModule], // ✅ ajoute NgIf ici
+  imports: [CommonModule, ReactiveFormsModule], 
   templateUrl: './add-medicine.html',
   styleUrls: ['./add-medicine.css']
 })
@@ -43,7 +43,7 @@ export class AddMedicineComponent {
         }
       });
     } else {
-      this.errorMessage = '⚠️ Veuillez remplir tous les champs correctement.';
+      this.errorMessage = ' Veuillez remplir tous les champs correctement.';
     }
   }
 }

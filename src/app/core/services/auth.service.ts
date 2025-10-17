@@ -5,33 +5,40 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthService {
-  private isLoggedIn = false;
   private userRole: string | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    const storedRole = localStorage.getItem('userRole');
+    if (storedRole) {
+      this.userRole = storedRole;
+    }
+  }
 
   login(username: string, password: string): boolean {
     if (username === 'admin' && password === 'admin') {
-      this.isLoggedIn = true;
       this.userRole = 'admin';
+      localStorage.setItem('userRole', this.userRole);
+      localStorage.setItem('authToken', 'fake-admin-token');
       return true;
     }
     if (username === 'user' && password === 'user') {
-      this.isLoggedIn = true;
       this.userRole = 'user';
+      localStorage.setItem('userRole', this.userRole);
+      localStorage.setItem('authToken', 'fake-user-token');
       return true;
     }
     return false;
   }
 
   logout(): void {
-    this.isLoggedIn = false;
     this.userRole = null;
+    localStorage.removeItem('userRole');
+    localStorage.removeItem('authToken');
     this.router.navigate(['/']);
   }
 
   isAuthenticated(): boolean {
-    return this.isLoggedIn;
+    return !!localStorage.getItem('authToken');
   }
 
   getRole(): string | null {

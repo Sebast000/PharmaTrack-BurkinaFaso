@@ -9,13 +9,34 @@ import { EditMedicineComponent } from './features/medicines/edit-medicine/edit-m
 
 export const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'medicines', component: ListMedicinesComponent, canActivate: [AuthGuard] },
-  { path: 'add-medicine', component: AddMedicineComponent, canActivate: [AuthGuard] },
-  { path: 'sales', component: ListSalesComponent },
-  { path: 'medicines/edit/:id', component: EditMedicineComponent },
-
-
-
+  { 
+    path: 'dashboard', 
+    component: DashboardComponent, 
+    canActivate: [AuthGuard], 
+    data: { role: 'admin' } 
+  },
+  { 
+    path: 'medicines', 
+    component: ListMedicinesComponent, 
+    canActivate: [AuthGuard], 
+    data: { role: 'admin' } 
+  },
+  { 
+    path: 'add-medicine', 
+    component: AddMedicineComponent, 
+    canActivate: [AuthGuard], 
+    data: { role: 'admin' } 
+  },
+  { 
+    path: 'sales', 
+    component: ListSalesComponent, 
+    canActivate: [AuthGuard] 
+  },
+  { 
+    path: 'medicines/edit/:id', 
+    component: EditMedicineComponent, 
+    canActivate: [AuthGuard], 
+    data: { role: 'admin' } 
+  },
   { path: '**', redirectTo: '' }
 ];

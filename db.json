@@ -4,65 +4,137 @@
       "name": "Spasfon",
       "category": "Antispamodique",
       "price": 2000,
-      "stock": 197,
+      "stock": 196,
       "expiryDate": "2028-08-02",
       "id": "f0dd"
     },
     {
-      "id": "df41",
       "name": "Paracétamol",
       "category": "Antidouleur",
       "price": 150,
-      "stock": 199,
-      "expiryDate": "2026-01-02"
+      "stock": 198,
+      "expiryDate": "2026-01-02",
+      "id": "df41"
     },
     {
-      "id": "430a",
       "name": "Doliprane",
       "category": "Antalgique",
       "price": 500,
-      "stock": 199,
-      "expiryDate": "2027-02-20"
+      "stock": 197,
+      "expiryDate": "2027-02-20",
+      "id": "430a"
     },
     {
       "name": "Maalox",
       "category": "Antiacide",
       "price": 650,
-      "stock": 199,
+      "stock": 196,
       "expiryDate": "2027-12-02",
       "id": "b7f9"
     },
     {
-      "id": "e80b",
       "name": "Oméprazole",
       "category": "Inhibiteur",
       "price": 600,
       "stock": 198,
-      "expiryDate": "2027-12-20"
+      "expiryDate": "2027-12-20",
+      "id": "e80b"
     },
     {
-      "id": "8a36",
       "name": "Fervex",
       "category": "Traitement des symptômes du rhume",
       "price": 500,
-      "stock": 199,
-      "expiryDate": "2028-01-01"
+      "stock": 197,
+      "expiryDate": "2028-01-01",
+      "id": "8a36"
     },
     {
       "name": "Amoxicilline",
       "category": "Antibiotique",
       "price": 700,
-      "stock": 200,
+      "stock": 197,
       "expiryDate": "2027-01-21",
       "id": "aa30"
     },
     {
-      "id": "f1e4",
       "name": "Aspégic",
       "category": "Anti-inflammatoire",
       "price": 750,
-      "stock": 200,
-      "expiryDate": "2028-12-12"
+      "stock": 198,
+      "expiryDate": "2028-12-12",
+      "id": "f1e4"
+    },
+    {
+      "name": "Saresta",
+      "category": "Anxiolytique",
+      "price": 4000,
+      "stock": 198,
+      "expiryDate": "2027-10-12",
+      "id": "2ce3"
+    },
+    {
+      "id": "4a81",
+      "name": "Oméprazole",
+      "category": "Inhbiteur de la Pompe",
+      "price": 1500,
+      "stock": 198,
+      "expiryDate": "2027-10-10"
+    },
+    {
+      "name": "Levothyrox",
+      "category": "Hormone thyroïdienne ",
+      "price": 1500,
+      "stock": 9,
+      "expiryDate": "2026-10-10",
+      "id": "5b14"
+    },
+    {
+      "id": "aa9f",
+      "name": "Augmentin",
+      "category": "Antibiotique ",
+      "price": 1500,
+      "stock": 9,
+      "expiryDate": "2026-02-15"
+    },
+    {
+      "id": "358a",
+      "name": "Combimal",
+      "category": "Antibiotique",
+      "price": 2500,
+      "stock": 194,
+      "expiryDate": "2026-11-20"
+    },
+    {
+      "id": "ffcc",
+      "name": "Doliprane ",
+      "category": "Analgésique",
+      "price": 1200,
+      "stock": 47,
+      "expiryDate": "2027-06-05"
+    },
+    {
+      "id": "b6b4",
+      "name": "Forxiga",
+      "category": "Diabète",
+      "price": 500,
+      "stock": 10,
+      "expiryDate": "2027-05-22"
+    },
+    {
+      "id": "4a7e",
+      "name": "Flagyl",
+      "category": "Antiparasitaire",
+      "price": 700,
+      "stock": 9,
+      "expiryDate": "2026-02-22"
+    },
+    {
+      "id": "afa8",
+      "name": "Inexium",
+      "category": "Gastro-entétrologie",
+      "price": 600,
+      "stock": 10,
+      "expiryDate": "2026-05-05"
     }
   ],
   "sales": [
@@ -215,6 +287,166 @@
       "quantity": 1,
       "total": 2000,
       "date": "2025-10-15"
+    },
+    {
+      "id": "78b5",
+      "medicineId": "aa9f",
+      "medicineName": "Augmentin",
+      "quantity": 2,
+      "total": 3000,
+      "date": "2025-10-15"
+    },
+    {
+      "id": "31b1",
+      "medicineId": "358a",
+      "medicineName": "Combimal",
+      "quantity": 1,
+      "total": 2500,
+      "date": "2025-10-15"
+    },
+    {
+      "id": "6561",
+      "medicineId": "5b14",
+      "medicineName": "Levothyrox",
+      "quantity": 2,
+      "total": 3000,
+      "date": "2025-10-15"
+    },
+    {
+      "id": "188b",
+      "medicineId": "df41",
+      "medicineName": "Paracétamol",
+      "quantity": 1,
+      "total": 150,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "9ba6",
+      "medicineId": "430a",
+      "medicineName": "Doliprane",
+      "quantity": 2,
+      "total": 1000,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "1479",
+      "medicineId": "8a36",
+      "medicineName": "Fervex",
+      "quantity": 2,
+      "total": 1000,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "63a1",
+      "medicineId": "358a",
+      "medicineName": "Combimal",
+      "quantity": 2,
+      "total": 5000,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "5a33",
+      "medicineId": "aa30",
+      "medicineName": "Amoxicilline",
+      "quantity": 1,
+      "total": 700,
+      "date": "2025-10-16"
+    },
+    {
+      "id": "612c",
+      "medicineId": "358a",
+      "medicineName": "Combimal",
+      "quantity": 2,
+      "total": 5000,
+      "date": "2025-10-16"
+    },
+    {
+      "id": "0618",
+      "medicineId": "b7f9",
+      "medicineName": "Maalox",
+      "quantity": 3,
+      "total": 1950,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "f944",
+      "medicineId": "f1e4",
+      "medicineName": "Aspégic",
+      "quantity": 2,
+      "total": 1500,
+      "date": "2025-10-16"
+    },
+    {
+      "id": "cd47",
+      "medicineId": "2ce3",
+      "medicineName": "Saresta",
+      "quantity": 2,
+      "total": 8000,
+      "date": "2025-10-16"
+    },
+    {
+      "id": "a5ec",
+      "medicineId": "4a81",
+      "medicineName": "Oméprazole",
+      "quantity": 2,
+      "total": 3000,
+      "date": "2025-10-16"
+    },
+    {
+      "id": "8cd4",
+      "medicineId": "f0dd",
+      "medicineName": "Spasfon",
+      "quantity": 1,
+      "total": 2000,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "8ec1",
+      "medicineId": "aa30",
+      "medicineName": "Amoxicilline",
+      "quantity": 2,
+      "total": 1400,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "ca8b",
+      "medicineId": "4a7e",
+      "medicineName": "Flagyl",
+      "quantity": 2,
+      "total": 1400,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "75d3",
+      "medicineId": "afa8",
+      "medicineName": "Inexium",
+      "quantity": 2,
+      "total": 1200,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "5640",
+      "medicineId": "ffcc",
+      "medicineName": "Doliprane ",
+      "quantity": 2,
+      "total": 2400,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "b40f",
+      "medicineId": "ffcc",
+      "medicineName": "Doliprane ",
+      "quantity": 1,
+      "total": 1200,
+      "date": "2025-10-17"
+    },
+    {
+      "id": "39ec",
+      "medicineId": "358a",
+      "medicineName": "Combimal",
+      "quantity": 1,
+      "total": 2500,
+      "date": "2025-10-17"
     }
   ],
   "users": [

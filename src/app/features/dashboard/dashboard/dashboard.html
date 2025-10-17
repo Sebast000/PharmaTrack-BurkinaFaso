@@ -3,7 +3,7 @@
 <div class="dashboard-indicators">
   <div class="indicator danger">
     <h3>Médicaments en rupture</h3>
-    <ul>
+    <ul *ngIf="lowStockMedicines.length > 0">
       <li *ngFor="let med of lowStockMedicines">
         ⚠️ {{ med.name }} <span>({{ med.stock }} en stock)</span>
       </li>

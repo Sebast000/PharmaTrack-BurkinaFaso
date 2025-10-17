@@ -3,7 +3,7 @@
   color: white;
   padding: 12px 24px;
   display: flex;
-  gap: 20px;
+  gap: 20px; 
   align-items: center;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   border-radius: 8px;
@@ -26,4 +26,17 @@
 
 .navbar a:active {
   transform: translateY(1px);
+}
+
+
+.btn-logout {
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease; 
 }
